@@ -208,7 +208,6 @@ template {
   -webkit-box-orient: vertical;
 }
 .fontawesomeIcon,
-hr:before,
 #post .post-copyright:before,
 #post .post-outdate-notice:before,
 .note:not(.no-icon)::before {
@@ -1426,25 +1425,6 @@ hr {
   position: relative;
   margin: 40px auto;
   border: 2px dashed var(--hr-border);
-  width: calc(100% - 4px);
-}
-hr:hover:before {
-  left: calc(95% - 20px);
-}
-hr:before {
-  position: absolute;
-  top: -10px;
-  left: 5%;
-  z-index: 1;
-  color: var(--hr-before-color);
-  content: '\f0c4';
-  font-size: 20px;
-  line-height: 1;
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  -ms-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 .table-wrap {
   overflow-x: scroll;
@@ -4207,7 +4187,7 @@ h1.page-title + .tag-cloud-list {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 666;
   pointer-events: none;
 }
 .medium-zoom-image--opened {
@@ -4590,7 +4570,7 @@ blockquote.pullquote.right {
   position: relative;
   margin: 0 0 20px;
   padding: 15px;
-  border-radius: 3px;
+  border-radius: 666px;
 }
 .note.icon-padding {
   padding-left: 3em;
@@ -4732,11 +4712,11 @@ blockquote.pullquote.right {
   font-size: larger;
 }
 .note.default.flat {
-  background: #f7f7f7;
+  background: #fff;
 }
 .note.default.modern {
   border-color: #e1e1e1;
-  background: #f3f3f3;
+  background: #fff;
   color: #666;
 }
 .note.default.modern a:not(.btn) {
@@ -4762,11 +4742,11 @@ blockquote.pullquote.right {
   color: #777;
 }
 .note.primary.flat {
-  background: #f5f0fa;
+  background: #fff;
 }
 .note.primary.modern {
   border-color: #e1c2ff;
-  background: #f3daff;
+  background: #fff;
   color: #6f42c1;
 }
 .note.primary.modern a:not(.btn) {
@@ -4792,11 +4772,11 @@ blockquote.pullquote.right {
   color: #6f42c1;
 }
 .note.info.flat {
-  background: #eef7fa;
+  background: #fff;
 }
 .note.info.modern {
   border-color: #b3e5ef;
-  background: #d9edf7;
+  background: #fff;
   color: #31708f;
 }
 .note.info.modern a:not(.btn) {
@@ -4822,11 +4802,11 @@ blockquote.pullquote.right {
   color: #428bca;
 }
 .note.success.flat {
-  background: #eff8f0;
+  background: #fff;
 }
 .note.success.modern {
   border-color: #d0e6be;
-  background: #dff0d8;
+  background: #fff;
   color: #3c763d;
 }
 .note.success.modern a:not(.btn) {
@@ -4852,11 +4832,11 @@ blockquote.pullquote.right {
   color: #5cb85c;
 }
 .note.warning.flat {
-  background: #fdf8ea;
+  background: #fff;
 }
 .note.warning.modern {
   border-color: #fae4cd;
-  background: #fcf4e3;
+  background: #fff;
   color: #8a6d3b;
 }
 .note.warning.modern a:not(.btn) {
@@ -4882,11 +4862,11 @@ blockquote.pullquote.right {
   color: #f0ad4e;
 }
 .note.danger.flat {
-  background: #fcf1f2;
+  background: #fff;
 }
 .note.danger.modern {
   border-color: #ebcdd2;
-  background: #f2dfdf;
+  background: #fff;
   color: #a94442;
 }
 .note.danger.modern a:not(.btn) {
