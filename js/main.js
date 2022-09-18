@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       blogNameWidth = document.getElementById('site-name').offsetWidth
       const $menusEle = document.querySelectorAll('#menus .menus_item')
       menusWidth = 0
-      $menusEle.length && $menusEle.forEach(i => { menusWidth += i.offsetWidth })
+      $menusEle.length && $menusEle.forEach(i => {menusWidth += i.offsetWidth})
       const $searchEle = document.querySelector('#search-button')
       searchWidth = $searchEle ? $searchEle.offsetWidth : 0
       $nav = document.getElementById('nav')
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const prevEle = ctx.previousElementSibling
           prevEle.innerText = GLOBAL_CONFIG.copy.success
           prevEle.style.opacity = 1
-          setTimeout(() => { prevEle.style.opacity = 0 }, 700)
+          setTimeout(() => {prevEle.style.opacity = 0}, 700)
         }
       } else {
         if (GLOBAL_CONFIG.Snackbar !== undefined) {
@@ -130,9 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const $nextEle = [...ele.parentNode.children].slice(1)
       ele.firstChild.classList.toggle('closed')
       if (btf.isHidden($nextEle[$nextEle.length - 1])) {
-        $nextEle.forEach(e => { e.style.display = 'block' })
+        $nextEle.forEach(e => {e.style.display = 'block'})
       } else {
-        $nextEle.forEach(e => { e.style.display = 'none' })
+        $nextEle.forEach(e => {e.style.display = 'none'})
       }
     }
 
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.classList.toggle('expand-done')
     }
 
-    function createEle (lang, item, service) {
+    function createEle(lang, item, service) {
       const fragment = document.createDocumentFragment()
 
       if (isShowTool) {
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $figureHighlight.forEach(function (item) {
           const langName = item.getAttribute('data-language') ? item.getAttribute('data-language') : 'Code'
           const highlightLangEle = `<div class="code-lang">${langName}</div>`
-          btf.wrap(item, 'figure', { class: 'highlight' })
+          btf.wrap(item, 'figure', {class: 'highlight'})
           createEle(highlightLangEle, item)
         })
       } else {
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       if (isPrismjs) {
         $figureHighlight.forEach(function (item) {
-          btf.wrap(item, 'figure', { class: 'highlight' })
+          btf.wrap(item, 'figure', {class: 'highlight'})
           createEle('', item)
         })
       } else {
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /**
    * PhotoFigcaption
    */
-  function addPhotoFigcaption () {
+  function addPhotoFigcaption() {
     document.querySelectorAll('#article-container img').forEach(function (item) {
       const parentEle = item.parentNode
       const altValue = item.title || item.alt
@@ -235,12 +235,12 @@ document.addEventListener('DOMContentLoaded', function () {
       $imgList.forEach(i => {
         const dataLazySrc = i.getAttribute('data-lazy-src')
         if (dataLazySrc) i.src = dataLazySrc
-        btf.wrap(i, 'div', { class: 'fj-gallery-item' })
+        btf.wrap(i, 'div', {class: 'fj-gallery-item'})
       })
     })
 
     if (window.fjGallery) {
-      setTimeout(() => { btf.initJustifiedGallery(ele) }, 100)
+      setTimeout(() => {btf.initJustifiedGallery(ele)}, 100)
       return
     }
 
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newEle.rel = 'stylesheet'
     newEle.href = GLOBAL_CONFIG.source.justifiedGallery.css
     document.body.appendChild(newEle)
-    getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then(() => { btf.initJustifiedGallery(ele) })
+    getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then(() => {btf.initJustifiedGallery(ele)})
   }
 
   /**
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // find the scroll direction
-    function scrollDirection (currentTop) {
+    function scrollDirection(currentTop) {
       const result = currentTop > initTop // true is down & false is up
       initTop = currentTop
       return result
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
       detectItem = currentIndex
 
       if (isToc) {
-        $cardToc.querySelectorAll('.active').forEach(i => { i.classList.remove('active') })
+        $cardToc.querySelectorAll('.active').forEach(i => {i.classList.remove('active')})
 
         if (currentId === '') {
           return
@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function () {
       newEle.className = 'fas fa-sign-out-alt exit-readmode'
       $body.appendChild(newEle)
 
-      function clickFn () {
+      function clickFn() {
         $body.classList.remove('read-mode')
         newEle.remove()
         newEle.removeEventListener('click', clickFn)
@@ -547,31 +547,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /**
-   * 複製時加上版權信息
-   */
-  const addCopyright = () => {
-    const copyright = GLOBAL_CONFIG.copyright
-    document.body.oncopy = (e) => {
-      e.preventDefault()
-      let textFont; const copyFont = window.getSelection(0).toString()
-      if (copyFont.length > copyright.limitCount) {
-        textFont = copyFont + '\n' + '\n' + '\n' +
-        copyright.languages.author + '\n' +
-        copyright.languages.link + window.location.href + '\n' +
-        copyright.languages.source + '\n' +
-        copyright.languages.info
-      } else {
-        textFont = copyFont
-      }
-      if (e.clipboardData) {
-        return e.clipboardData.setData('text', textFont)
-      } else {
-        return window.clipboardData.setData('text', textFont)
-      }
-    }
-  }
-
-  /**
    * 網頁運行時間
    */
   const addRuntime = () => {
@@ -600,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const $table = document.querySelectorAll('#article-container :not(.highlight) > table, #article-container > table')
     if ($table.length) {
       $table.forEach(item => {
-        btf.wrap(item, 'div', { class: 'table-wrap' })
+        btf.wrap(item, 'div', {class: 'table-wrap'})
       })
     }
   }
@@ -735,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btf.isHidden(document.getElementById('toggle-menu')) && mobileSidebarOpen && sidebarFn.close()
     })
 
-    document.getElementById('menu-mask').addEventListener('click', e => { sidebarFn.close() })
+    document.getElementById('menu-mask').addEventListener('click', e => {sidebarFn.close()})
 
     clickFnOfSubMenu()
     GLOBAL_CONFIG.islazyload && lazyloadImg()
@@ -770,7 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tabsFn.clickFnOfTabs()
     tabsFn.backToTop()
     switchComments()
-    document.getElementById('toggle-menu').addEventListener('click', () => { sidebarFn.open() })
+    document.getElementById('toggle-menu').addEventListener('click', () => {sidebarFn.open()})
   }
 
   refreshFn()
