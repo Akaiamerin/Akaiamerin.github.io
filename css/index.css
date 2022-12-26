@@ -2010,10 +2010,10 @@ figure.highlight pre .javascript .function {
   color: #858585;
 }
 .category-lists .category-list .category-list-count:before {
-  content: '(';
+  content: '「';
 }
 .category-lists .category-list .category-list-count:after {
-  content: ')';
+  content: '」';
 }
 .category-lists ul {
   padding: 0 0 0 20px;
@@ -3260,7 +3260,6 @@ h1.page-title + .tag-cloud-list {
 #page-header #scroll-down .scroll-down-effects {
   position: relative;
   width: 100%;
-  color: var(--light-grey);
   font-size: 30px;
 }
 #page-header.not-home-page {
@@ -3958,7 +3957,6 @@ h1.page-title + .tag-cloud-list {
   border-radius: 5px;
   background-color: var(--btn-bg);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  color: var(--btn-color);
   text-align: center;
   font-size: 16px;
   line-height: 35px;
