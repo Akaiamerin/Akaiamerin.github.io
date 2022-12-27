@@ -1939,7 +1939,7 @@ figure.highlight pre .javascript .function {
   padding: 0;
 }
 .article-sort-item.year {
-  font-size: 1.43em;
+  font-size: 1.6em;
 }
 .article-sort-item.year:hover:before {
   border-color: #ccc;
@@ -2233,7 +2233,7 @@ figure.highlight pre .javascript .function {
   padding: 16px 10px 0 0;
   height: 40px;
   font-weight: bold;
-  font-size: 1.43em;
+  font-size: 1.6em;
 }
 #article-container .flink .flink-item-desc {
   padding: 16px 10px 16px 0;
@@ -2353,7 +2353,7 @@ figure.highlight pre .javascript .function {
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item >.recent-post-info > .article-title {
-    font-size: 1.43em;
+    font-size: 1.6em;
   }
 }
 #recent-posts > .recent-post-item >.recent-post-info > .article-title:hover {
@@ -3086,7 +3086,7 @@ h1.page-title + .tag-cloud-list {
   display: inline-block;
   vertical-align: middle;
   font-weight: 700;
-  font-size: 1.43em;
+  font-size: 1.6em;
 }
 #post-comment .comment-head #comment-switch {
   display: inline-block;
@@ -3165,7 +3165,7 @@ h1.page-title + .tag-cloud-list {
   text-align: center;
 }
 #footer-wrap a {
-  color: var(--light-grey);
+  color: var(--font-color);
 }
 #footer-wrap a:hover {
   text-decoration: underline;
@@ -3249,7 +3249,7 @@ h1.page-title + .tag-cloud-list {
   margin: 0 10px;
   color: var(--light-grey);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  font-size: 1.43em;
+  font-size: 1.6em;
 }
 #page-header #scroll-down {
   position: absolute;
@@ -3858,7 +3858,7 @@ h1.page-title + .tag-cloud-list {
 .relatedPosts > .headline {
   margin-bottom: 5px;
   font-weight: 700;
-  font-size: 1.43em;
+  font-size: 1.6em;
 }
 .relatedPosts > .relatedPosts-list > div {
   position: relative;
