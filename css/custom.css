@@ -1,0 +1,329 @@
+/* 全局 */
+:root {
+    --global-font-size: 16px;
+    --font-color: #333333;
+    --hover-color: #c0c0c0;
+    --text-shadow: 0px 0px 2px 0 #cccccc;
+    --box-shadow: 0 0 10px 0 #cccccc;
+    --box-hover-shadow: 0 0 10px 0 #aaaaaa;
+}
+
+body {
+    font-family: -apple-system, blinkmacsystemfont, 'segoe ui', 'helvetica neue', arial, 'pingfang sc', 'microsoft yahei', sans-serif;
+}
+
+svg {
+    position: relative;
+    top: 6px;
+}
+
+#web_bg {
+    z-index: 2147483647;
+    background: #ffffff;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bbbbbb;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #aaaaaa;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eeeeee;
+}
+
+/* 导航栏左上角文字 */
+#nav .site-name {
+    color: var(--font-color);
+    text-shadow: var(--text-shadow);
+}
+
+/* 导航栏 */
+#page-header.nav-fixed #nav {
+    background: none;
+    box-shadow: none;
+}
+
+#page-header.nav-fixed #nav #blog-info .site-name {
+    text-shadow: var(--text-shadow);
+}
+
+/* 侧边栏 */
+#aside-content {
+    font-weight: 700;
+}
+
+/* 主页侧边栏头像 */
+.avatar-img img {
+    transition: none;
+}
+
+/* 主页侧边栏描述图标链接 */
+#aside-content .card-info .card-info-social-icons i {
+    transition: all 0.2s;
+}
+
+#aside-content .card-info .card-info-social-icons i:hover {
+    transform: scale(1.1);
+}
+
+/* 主页侧边栏标签 */
+#aside-content .card-tag-cloud a {
+    padding: 0;
+    transition: all 0.5s;
+}
+
+#aside-content .card-tag-cloud a:hover {
+    transform: scale(1.1);
+}
+
+/* 主页侧边栏分类 */
+#aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
+#aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
+    background-color: transparent;
+}
+
+#aside-content .card-categories .item-headline span {
+    margin-left: 0;
+}
+
+/* 文章侧边栏目录 */
+#aside-content #card-toc .toc-content .toc-link {
+    color: var(--font-color);
+}
+
+#aside-content #card-toc .toc-content .toc-link.active,
+#aside-content #card-toc .toc-content .toc-link:hover {
+    color: var(--hover-color);
+    background: none;
+}
+
+/* 卡片边框 */
+.cardhover,
+.layout > div:first-child:not(.recent-posts),
+#recent-posts > .recent-post-item,
+#aside-content .card-widget,
+.layout > .recent-posts .pagination > *:not(.space) {
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    opacity: 0.8;
+}
+
+.cardhover:hover,
+.layout > div:first-child:not(.recent-posts):hover,
+#recent-posts > .recent-post-item:hover,
+#aside-content .card-widget:hover,
+.layout > .recent-posts .pagination > *:not(.space):hover {
+    box-shadow: var(--box-hover-shadow);
+}
+
+/* 主页背景 */
+#page-header,
+#page-header:not(.not-top-img):before {
+    background-color: transparent;
+}
+
+/* 主页主标题 */
+#page-header #site-title {
+    font-size: 5rem;
+    color: var(--font-color);
+    text-shadow: var(--text-shadow);
+}
+
+/* 主页子标题 */
+#page-header #site-subtitle {
+    font-size: 2rem;
+    font-family: consolas;
+    color: var(--font-color);
+    text-shadow: var(--text-shadow);
+}
+
+/* 主页下箭头 */
+#page-header #scroll-down .scroll-down-effects {
+    font-size: 5rem;
+    color: var(--font-color);
+}
+
+/* 文章主标题 */
+#post-info .post-title {
+    font-weight: 700;
+    font-size: 4rem;
+    color: var(--font-color);
+    text-shadow: var(--text-shadow);
+}
+
+/* 文章设置信息 */
+#post-info #post-meta,
+#post-info #post-meta a {
+    font-size: 1rem;
+    color: var(--font-color);
+}
+
+#post-info #post-meta a:hover {
+    text-decoration: none;
+    color: var(--hover-color);
+}
+
+/* 主页最近文章标题 */
+#recent-posts > .recent-post-item > .recent-post-info > .article-title {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--font-color);
+}
+
+/* 主页最近文章设置信息 */
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap,
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap a {
+    margin: 0;
+    font-size: unset;
+    color: var(--font-color);
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap a:hover {
+    text-decoration: none;
+    color: var(--hover-color);
+}
+
+#recent-posts > .recent-post-item > .recent-post-info > .article-meta-wrap .article-meta-separator {
+    margin: 0 10px 0 10px;
+}
+
+#article-container a:hover {
+    text-decoration: none;
+    color: #3366ee;
+}
+
+/* 文章底部标签 */
+#post .tag_share .post-meta__tags {
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    color: unset;
+    transition: all 0.5s;
+}
+
+#post .tag_share .post-meta__tags:hover {
+    color: var(--hover-color);
+    background: none;
+    transform: scale(1.1);
+}
+
+/* archives 页面 */
+.article-sort-title,
+.article-sort-item.year,
+.article-sort-item-time,
+.article-sort-item-title {
+    font-weight: 700;
+    color: var(--font-color);
+}
+
+/* archives 页面文章数 */
+.article-sort-title {
+    font-size: 2rem;
+}
+
+/* archives 页面年 */
+.article-sort-item.year {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #cccccc;
+}
+
+/* archives 页面创建时间 */
+.article-sort-item-time {
+    font-size: 1.2rem;
+}
+
+.article-sort-item-time time {
+    padding-left: 0;
+}
+
+.article-sort-item.no-article-cover .article-sort-item-info {
+    padding: 0 1rem;
+}
+
+.fa-calendar-alt:before,
+.fa-calendar-days:before {
+    content: none;
+}
+
+/* archives 页面文章标题 */
+.article-sort-item-title {
+    font-size: 1.5rem;
+}
+
+/* categories 页面 */
+.category-lists .category-list .category-list-count {
+    margin-left: 0;
+    color: var(--font-color);
+}
+
+.category-lists .category-list .category-list-count::before {
+    content: '「'
+}
+
+.category-lists .category-list .category-list-count::after {
+    content: '」'
+}
+
+/* tags 页面 */
+.tag-cloud-list a {
+    transition: all 0.5s;
+}
+
+.tag-cloud-list a:hover {
+    color: var(--hover-color) !important;
+    transform: scale(1.1);
+}
+
+/* 当前页 */
+#pagination .page-number.current {
+    border-radius: 5px;
+    font-weight: 700;
+    color: var(--font-color);
+    background: none;
+}
+
+/* 右侧底部按钮 */
+#rightside > div > button,
+#rightside > div > a {
+    color: var(--font-color);
+    background-color: transparent;
+}
+
+#rightside > div > button:hover,
+#rightside > div > a:hover {
+    color: var(--hover-color);
+    background-color: transparent;
+}
+
+#rightside #go-up.show-percent .scroll-percent {
+    font-weight: 700;
+}
+
+/* 页脚 */
+#footer,
+#footer:before {
+    background-color: transparent;
+}
+
+#footer-wrap div,
+#footer-wrap a {
+    color: var(--font-color);
+}
+
+#footer-wrap a:hover {
+    text-decoration: none;
+    color: var(--hover-color);
+}
