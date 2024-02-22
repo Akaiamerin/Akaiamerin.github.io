@@ -60,7 +60,7 @@
         document.getElementById('blog-text').innerHTML = `
         <div>
             <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">
-                <img src="https://img.shields.io/badge/Hexo-7.0.0-0E88CC" alt="Hexo">
+                <img src="https://img.shields.io/badge/Hexo-7.1.0-0E88CC" alt="Hexo">
             </a>
             <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">
                 <img src="https://img.shields.io/badge/Butterfly-4.11.0-1ABBAA" alt="Butterfly">
