@@ -46,15 +46,15 @@ svg {
 }
 
 /* 导航栏 */
-#nav .site-page,
-#nav .site-name {
-    color: var(--font-color) !important;
-    text-shadow: none !important;
-}
-
 #page-header.nav-fixed #nav {
     background: none !important;
     box-shadow: none !important;
+}
+
+#nav .site-name,
+#nav .site-page {
+    color: var(--font-color) !important;
+    text-shadow: none !important;
 }
 
 /* 卡片 */
@@ -78,8 +78,8 @@ svg {
 
 /* 内容 */
 .layout {
+    width: 80% !important;
     max-width: none !important;
-    width: 90% !important;
 }
 
 .layout > div:first-child {
@@ -113,7 +113,7 @@ svg {
 
 /* 侧边栏描述图标链接 */
 #aside-content .card-info .card-info-social-icons i {
-    transition: all 0.5s !important;
+    transition: all 0.5s ease 0s !important;
 }
 
 #aside-content .card-info .card-info-social-icons i:hover {
@@ -123,7 +123,7 @@ svg {
 /* 侧边栏标签 */
 #aside-content .card-tag-cloud a {
     padding: 0 !important;
-    transition: all 0.5s !important;
+    transition: all 0.5s ease 0s !important;
 }
 
 #aside-content .card-tag-cloud a:hover {
@@ -137,7 +137,7 @@ svg {
 
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover {
-    background: transparent !important;
+    background: none !important;
 }
 
 /* 侧边栏目录 */
@@ -154,12 +154,12 @@ svg {
 /* 主页背景 */
 #page-header,
 #page-header:not(.not-top-img):before {
-    background: transparent !important;
+    background: none !important;
 }
 
 /* 主页主标题 */
 #page-header #site-title {
-    font-size: 5rem !important;
+    font-size: 3rem !important;
     color: var(--font-color) !important;
     text-shadow: var(--text-shadow) !important;
 }
@@ -174,11 +174,18 @@ svg {
 
 /* 主页下箭头 */
 #page-header #scroll-down .scroll-down-effects {
-    font-size: 5rem !important;
-    color: var(--font-color) !important;
+    font-size: 60px !important;
 }
 
 /* 文章主标题 */
+#post-info .post-title,
+#post-meta .meta-firstline,
+#post-meta .meta-secondline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #post-info .post-title {
     font-weight: 700 !important;
     font-size: 5rem !important;
@@ -227,7 +234,7 @@ svg {
     border: none !important;
     border-radius: 0 !important;
     font-size: 1rem !important;
-    transition: all 0.5s !important;
+    transition: all 0.5s ease 0s !important;
 }
 
 #post .tag_share .post-meta__tags:hover {
@@ -276,7 +283,7 @@ svg {
 
 .fa-calendar-alt:before,
 .fa-calendar-days:before {
-    content: none !important;
+    content: '' !important;
 }
 
 /* archives 页面文章标题 */
@@ -300,7 +307,7 @@ svg {
 
 /* tags 页面 */
 .tag-cloud-list a {
-    transition: all 0.5s !important;
+    transition: all 0.5s ease 0s !important;
 }
 
 .tag-cloud-list a:hover {
@@ -319,34 +326,45 @@ svg {
 
 /* 右侧底部按钮 */
 #rightside {
-    right: -1rem !important;
+    right: 0rem !important;
     bottom: 2rem !important;
 }
 
 #rightside > div > button,
 #rightside > div > a {
     color: var(--font-color) !important;
-    background: transparent !important;
+    background: none !important;
 }
 
 #rightside > div > button:hover,
 #rightside > div > a:hover {
     color: var(--hover-color) !important;
-    background: transparent !important;
+    background: none !important;
 }
 
-#rightside #go-up svg {
-    width: 100% !important;
-    height: 100% !important;
+#rightside-config-hide,
+#rightside-config {
+    display: none !important;
 }
 
-#rightside #go-up.show-percent .scroll-percent {
+#go-up {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#go-up svg {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+#go-up.show-percent .scroll-percent {
     font-weight: 700 !important;
 }
 
 /* 页脚 */
 #footer {
-    background: transparent !important;
+    background: none !important;
 }
 
 #footer-wrap {

@@ -489,16 +489,18 @@
 	width: 100%;
 	padding: 0.8em 0.5em;
 	background: transparent;
-	border: 2px solid;
-	color: #8781bd;
+	border: 2px solid #cccccc; /***/
+	color: #333333; /***/
 	-webkit-transition: border-color 0.25s;
 	transition: border-color 0.25s;
+
+	border-radius: 10px; /***/
 }
 
 .hbe-input-label-blink {
 	width: 100%;
 	position: absolute;
-	top: 0;
+	top: -0.5em; /***/
 	text-align: left;
 	overflow: hidden;
 	padding: 0;
@@ -509,22 +511,22 @@
 
 .hbe-input-label-content-blink {
 	padding: 0 1em;
-	font-weight: 400;
-	color: #b5b5b5;
+	font-weight: 700; /***/
+	color: #808080; /***/
 }
 
 .hbe-input-label-content-blink::after {
 	content: attr(data-content);
 	position: absolute;
-	top: -200%;
+	top: -220%; /***/
 	left: 0;
-	color: #8781bd ;
-	font-weight: 800;
+	color: #808080; /***/
+	font-weight: 700; /***/
 }
 
 .hbe-input-field-blink:focus,
 .input--filled .hbe-input-field-blink {
-	border-color: #8781bd ;
+	border-color: #aaaaaa; /***/
 }
 
 .hbe-input-field-blink:focus + .hbe-input-label-blink,
