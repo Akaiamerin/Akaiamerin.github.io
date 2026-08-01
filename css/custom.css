@@ -13,7 +13,6 @@ body {
 
 svg {
     position: relative !important;
-    margin: 0 0.2rem 0 0 !important;
     transform: translate(0, 25%) !important;
 }
 
@@ -24,25 +23,36 @@ svg {
 }
 
 /* 滚动条 */
-::-webkit-scrollbar {
-    width: 16px !important;
-    height: 16px !important;
+::-webkit-scrollbar,
+::-webkit-scrollbar-button {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M12 4 22 20 2 20Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
+    background-position: center center;
+}
+
+::-webkit-scrollbar-button:vertical:increment {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M12 20 2 4 22 4Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
+    background-position: center center;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cccccc !important;
+    border: 2px solid transparent;
+    background-color: #c1c1c1;
+    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #bbbbbb !important;
+    background-color: #a1a1a1;
 }
 
-::-webkit-scrollbar-thumb:active {
-    background: #aaaaaa !important;
-}
-
-::-webkit-scrollbar-track {
-    background: #eeeeee !important;
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece,
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 /* 导航栏 */
@@ -59,21 +69,23 @@ svg {
 }
 
 /* 卡片 */
-.cardhover,
-.layout > div:first-child:not(.recent-posts),
-#recent-posts > .recent-post-item,
+.cardHover,
+.layout > div:first-child:not(.nc),
+#recent-posts .recent-post-item,
+#article-container .shuoshuo-item,
 #aside-content .card-widget,
-.layout > .recent-posts .pagination > *:not(.space) {
+.layout .pagination > *:not(.space) {
     border-radius: 10px !important;
     opacity: 0.8 !important;
     box-shadow: var(--box-shadow) !important;
 }
 
-.cardhover:hover,
-.layout > div:first-child:not(.recent-posts):hover,
-#recent-posts > .recent-post-item:hover,
+.cardHover:hover,
+.layout > div:first-child:not(.nc):hover,
+#recent-posts .recent-post-item:hover,
+#article-container .shuoshuo-item:hover,
 #aside-content .card-widget:hover,
-.layout > .recent-posts .pagination > *:not(.space):hover {
+.layout .pagination > *:not(.space):hover {
     box-shadow: var(--hover-box-shadow) !important;
 }
 
@@ -113,35 +125,17 @@ svg {
 }
 
 /* 侧边栏描述图标链接 */
-#aside-content .card-info .card-info-social-icons i {
-    transition: all 0.5s ease 0s !important;
-}
-
 #aside-content .card-info .card-info-social-icons i:hover {
-    transform: scale(1.1) !important;
-}
-
-/* 侧边栏标签 */
-#aside-content .card-tag-cloud a {
-    padding: 0 !important;
-    transition: all 0.5s ease 0s !important;
-}
-
-#aside-content .card-tag-cloud a:hover {
-    transform: scale(1.1) !important;
+    transform: none !important;
 }
 
 /* 侧边栏分类 */
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a:hover,
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a:hover,
-#aside-content #card-toc .toc-content .toc-link.active,
-#aside-content #card-toc .toc-content .toc-link:hover {
+#aside-content #card-toc .toc-content .toc-link:hover,
+#aside-content #card-toc .toc-content .toc-link.active {
     color: var(--hover-color) !important;
     background: none !important;
-}
-
-#aside-content .card-categories .item-headline span {
-    margin: 0 !important;
 }
 
 /* 侧边栏目录 */
@@ -173,6 +167,7 @@ svg {
 /* 主页下箭头 */
 #page-header #scroll-down .scroll-down-effects {
     font-size: 60px !important;
+    color: var(--font-color) !important;
 }
 
 /* 文章主标题 */
@@ -279,11 +274,6 @@ svg {
     padding: 0 0 0 1rem !important;
 }
 
-.fa-calendar-alt:before,
-.fa-calendar-days:before {
-    content: '' !important;
-}
-
 /* archives 页面文章标题 */
 .article-sort-item-title {
     font-size: 1.5rem !important;
@@ -326,20 +316,15 @@ svg {
 
 /* 右侧底部按钮 */
 #rightside {
-    right: 0rem !important;
-    bottom: 2rem !important;
+    right: 0;
+    bottom: 2rem;
 }
 
 #rightside > div > button,
 #rightside > div > a {
     color: var(--font-color) !important;
     background: none !important;
-}
-
-#rightside > div > button:hover,
-#rightside > div > a:hover {
-    color: var(--hover-color) !important;
-    background: none !important;
+    box-shadow: none !important;
 }
 
 #rightside-config-hide,
@@ -353,20 +338,80 @@ svg {
     align-items: center !important;
 }
 
-#go-up svg {
-    width: 48px !important;
-    height: 48px !important;
+#go-up i {
+    transform: none !important;
+}
+
+#go-up .arrow-icon-container {
+    --width: 16px;
+    --height: 4px;
+    --border-radius: var(--height);
+    --offset: 27%;
+    --negative-offset: calc(-1 * var(--offset));
+}
+
+#go-up .arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: currentColor;
+}
+
+#go-up .arrow::before,
+#go-up .arrow::after {
+    content: '';
+    position: absolute;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: inherit;
+}
+
+#go-up .arrow::before {
+    transform: translate(var(--offset), 0%) rotate(45deg);
+}
+
+#go-up .arrow::after {
+    transform: translate(var(--negative-offset), 0%) rotate(135deg);
 }
 
 #go-up.show-percent .scroll-percent {
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 /* 页脚 */
 #footer {
-    background: none !important;
+    background: none;
 }
 
-#footer-wrap {
-    color: var(--font-color) !important;
+#footer > * {
+    color: var(--font-color);
+}
+
+.footer_custom_text,
+#copyright-text,
+#framework-text,
+#runtime-text,
+#framework-text a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_custom_text {
+    flex-flow: column nowrap;
+}
+
+.footer_custom_text > div {
+    margin: 0.5rem 0 0.5rem 0;
+    text-align: center;
+}
+
+#framework-text a {
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+#runtime-text div {
+    margin: 0 0.2rem 0 0.2rem;
 }
