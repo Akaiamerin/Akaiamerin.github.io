@@ -2,6 +2,7 @@
     --global-font-size: 16px;
     --font-color: #333333;
     --hover-color: #c0c0c0;
+    --anchor-hover-color: #3399ee;
     --text-shadow: 0 2px 5px #00000033;
     --box-shadow: 0 0 10px 0 #00000033;
     --hover-box-shadow: 0 0 10px 0 #00000066;
@@ -62,10 +63,14 @@ svg {
     backdrop-filter: none !important;
 }
 
-#nav .site-name,
-#nav .site-page {
+#nav a,
+#nav span.site-page {
     color: var(--font-color);
-    text-shadow: none;
+}
+
+#nav a:hover,
+#nav span.site-page:hover {
+    color: var(--anchor-hover-color);
 }
 
 /* 卡片 */
@@ -145,7 +150,7 @@ svg {
 
 #aside-content #card-toc .toc-content .toc-link:hover,
 #aside-content #card-toc .toc-content .toc-link.active {
-    color: #3399ee;
+    color: var(--anchor-hover-color);
     background: none;
 }
 
