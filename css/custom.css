@@ -6,6 +6,7 @@
     --text-shadow: 0 2px 5px #00000033;
     --box-shadow: 0 0 10px 0 #00000033;
     --hover-box-shadow: 0 0 10px 0 #00000066;
+    --scrollbar-size: 16px;
 }
 
 body {
@@ -17,17 +18,11 @@ svg {
     transform: translate(0, 25%) !important;
 }
 
-/* 背景 */
-#web_bg {
-    z-index: 2147483647;
-    background: #ffffff;
-}
-
 /* 滚动条 */
 ::-webkit-scrollbar,
 ::-webkit-scrollbar-button {
-    width: 16px;
-    height: 16px;
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
 }
 
 ::-webkit-scrollbar-button:vertical:decrement,
@@ -37,11 +32,11 @@ svg {
 }
 
 ::-webkit-scrollbar-button:vertical:decrement {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M12 4 22 20 2 20Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M12 4 22 20 2 20Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
 }
 
 ::-webkit-scrollbar-button:vertical:increment {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24'%3E%3Cpath d='M12 20 2 4 22 4Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath d='M12 20 2 4 22 4Z' fill='%23c1c1c1'/%3E%3C/svg%3E");
 }
 
 ::-webkit-scrollbar-thumb {
@@ -62,9 +57,20 @@ svg {
 
 /* 导航栏 */
 #page-header #nav {
-    background: none !important;
     box-shadow: none !important;
-    backdrop-filter: none !important;
+}
+
+#page-header.nav-fixed #nav {
+    border-bottom: 1px solid #cccccc;
+}
+
+#page-header.nav-fixed.fixed #nav {
+    transition: none !important;
+}
+
+#nav .site-name,
+#nav .site-page {
+    text-shadow: none !important;
 }
 
 #nav a,
@@ -101,7 +107,6 @@ svg {
 /* 内容 */
 .layout {
     width: 80%;
-    max-width: none;
 }
 
 .layout > div:first-child {
@@ -115,7 +120,6 @@ svg {
 }
 
 @media screen and (max-width: 900px) {
-
     .layout > div:first-child,
     #aside-content {
         width: 100%;

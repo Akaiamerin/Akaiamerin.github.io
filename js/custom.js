@@ -1,9 +1,7 @@
 (() => {
-    //去除遮罩
+    //壁纸
     window.addEventListener('load', () => {
-        const bodyWrap = document.getElementById('body-wrap');
-        bodyWrap.style.zIndex = -2147483647;
-        bodyWrap.style.background = `url(${location.origin}/img/background.jpg) center/cover no-repeat fixed`;
+        document.body.style.background = `url(${location.origin}/img/background.jpg) center/cover no-repeat fixed`;
     });
     //随机颜色
     function generateRandomColorHexadecimal() {
