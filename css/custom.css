@@ -23,6 +23,7 @@ svg {
 ::-webkit-scrollbar-button {
     width: var(--scrollbar-size);
     height: var(--scrollbar-size);
+    background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-button:vertical:decrement,
