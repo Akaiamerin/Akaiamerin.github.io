@@ -1,22 +1,13 @@
 :root {
     --global-font-size: 16px;
-    --border-color: #cccccc;
-    --font-color: #333333;
-    --hover-color: #c0c0c0;
-    --text-shadow: 0 2px 5px #00000033;
-    --box-shadow: 0 0 10px 0 #00000033;
-    --hover-box-shadow: 0 0 10px 0 #00000066;
-    --scrollbar-size: 16px;
     --pseudo-hover: #49b1f5;
+    --border-color: #cccccc;
+    --scrollbar-size: 16px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
 }
 
 [data-theme='dark'] {
     --border-color: #444444;
-    --font-color: #f8f8f8;
-    --text-shadow: 0 2px 5px #ffffff33;
-    --box-shadow: 0 0 10px 0 #ffffff33;
-    --hover-box-shadow: 0 0 10px 0 #ffffff66;
 }
 
 svg {
@@ -111,16 +102,6 @@ svg {
 .layout .pagination > *:not(.space) {
     border-radius: 10px;
     opacity: 0.8;
-    box-shadow: var(--box-shadow);
-}
-
-.cardHover:hover,
-.layout > div:first-child:not(.nc):hover,
-#recent-posts .recent-post-item:hover,
-#article-container .shuoshuo-item:hover,
-#aside-content .card-widget:hover,
-.layout .pagination > *:not(.space):hover {
-    box-shadow: var(--hover-box-shadow);
 }
 
 /* 内容 */
@@ -169,7 +150,7 @@ svg {
 
 /* 侧边栏标签 */
 #aside-content .card-tag-cloud a:hover {
-    color: var(--hover-color) !important;
+    color: var(--pseudo-hover) !important;
 }
 
 /* 侧边栏目录 */
@@ -193,7 +174,6 @@ svg {
 #page-header #site-title,
 #page-header #site-subtitle {
     color: var(--font-color);
-    text-shadow: var(--text-shadow);
 }
 
 #page-header #site-title {
@@ -230,12 +210,11 @@ svg {
 #post-info .post-title {
     font-weight: 700;
     font-size: 4rem;
-    text-shadow: var(--text-shadow);
 }
 
 #post-info #post-meta a:hover {
     text-decoration: none;
-    color: var(--hover-color);
+    color: var(--pseudo-hover);
 }
 
 /* 主页最近文章标题 */
@@ -253,7 +232,7 @@ svg {
 
 #recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap a:hover {
     text-decoration: none;
-    color: var(--hover-color);
+    color: var(--pseudo-hover);
 }
 
 #recent-posts .recent-post-item > .recent-post-info > .article-meta-wrap .article-meta-separator {
@@ -333,7 +312,7 @@ svg {
 }
 
 .tag-cloud-list a:hover {
-    color: var(--hover-color) !important;
+    color: var(--pseudo-hover) !important;
     background: none !important;
     box-shadow: none;
     transform: none;
