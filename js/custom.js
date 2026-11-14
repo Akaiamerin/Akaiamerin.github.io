@@ -54,7 +54,7 @@
             <img src="https://img.shields.io/badge/Hexo-8.1.2-0e88cc" alt="Hexo">
         </a>
         <a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">
-            <img src="https://img.shields.io/badge/Butterfly-5.7.0-1ab1ad" alt="Butterfly">
+            <img src="https://img.shields.io/badge/Butterfly-5.7.2-1ab1ad" alt="Butterfly">
         </a>`;
     }
     //页脚运行时间
